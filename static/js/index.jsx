@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import $ from "jquery";
-import tablesorter from "tablesorter"
+// import $ from "jquery";
+// import tablesorter from "tablesorter"
 
-$('.dataframe > tbody > tr').click(function(event) {
-    console.log("{{ my_string }}");
-    console.log($(this));
-});
+// $('.dataframe > tbody > tr').click(function(event) {
+//     console.log("{{ my_string }}");
+//     console.log($(this));
+// });
 
-$(document).ready(function(){
-    $('.dataframe').tablesorter(); 
-});
+// $(document).ready(function(){
+//     $('draft-table').tablesorter(); 
+// });
 
 function fetch_and_render() {
 	return fetch('./api/stats')
