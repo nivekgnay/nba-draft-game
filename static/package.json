@@ -1,0 +1,41 @@
+{
+  "name": "nba-draft-game",
+  "version": "1.0.0",
+  "description": "nba drafting game",
+  "main": "jquery-latest.js",
+  "scripts": {
+    "build": "webpack -p --progress --config webpack.config.js",
+    "dev-build": "webpack --progress -d --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --progress -d -config webpack.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/nivekgnay/nba-draft-game"
+  },
+  "keywords": [
+    "python",
+    "react",
+    "flask",
+    "fantasy basketball"
+  ],
+  "author": "kevin yang",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "jquery": "^3.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "tablesorter": "^2.29.2",
+    "webpack": "^3.10.0"
+  }
+}
