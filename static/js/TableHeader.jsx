@@ -8,10 +8,10 @@ export default class TableHeader extends React.Component {
 	render () {
 		var header = [];
 		for (let i = 0; i < this.props.header.length; i++) {
-			if (i == 0) {
-				// Hide ID Column
-				continue;
-			}
+			// if (i == 0) {
+			// 	// Hide ID Column
+			// 	continue;
+			// }
 			header.push(<th key={i}> {this.props.header[i]} </th>);
 		}
 		return (<tr>

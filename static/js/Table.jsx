@@ -14,17 +14,21 @@ export default class Table extends React.Component {
 		this.deleteTableRow = this.deleteTableRow.bind(this);
 	}
 
-	// componentDidMount() {
-	// 	$('.draft-table').tablesorter();
-	// }
+	componentDidMount() {
+		$('.draft-table').tablesorter();
+	}
 
-	// componentDidUpdate() {
-	// 	$('.draft-table').tablesorter();
-	// }
+	componentDidUpdate() {
+		$('.draft-table').trigger("update");
+	}
 
 	deleteTableRow(index) {
 		console.log('deleting row');
 		console.log(this.state.display)
+		if (this.props.isGameOver()) {
+			return;
+		}
+		this.props.makeMove(this.state.display[index]);
 		this.setState((prevState) => ({
     		display: prevState.display.filter((_, i) => i !== index)
   		}));
@@ -32,13 +36,14 @@ export default class Table extends React.Component {
 	}
 
 	render () {
+		// Below: slice(1) is used twice to remove ID
 		var body = [];
 		for (let i = 0; i < this.state.display.length; i++) {
-			body.push(<TableRow data={this.state.display[i]} key={this.state.display[i][0]} 
+			body.push(<TableRow data={this.state.display[i].slice(1)} key={this.state.display[i][0]} 
 						deleteTableRow={this.deleteTableRow} rowIndex={i} />);
 		}
-		return (<table className="draft-table">
-				<thead><TableHeader header={this.props.header} /></thead>
+		return (<table border="1" className="draft-table">
+				<thead><TableHeader header={this.props.header.slice(1)} /></thead> 
 				<tbody>
 				{body} 
 				</tbody>
